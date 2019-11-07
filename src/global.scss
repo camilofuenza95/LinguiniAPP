@@ -1,0 +1,116 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
+
+//------Margin Top-------------------------
+.mt-5{ margin-top:5px !important; }
+.mt-10{ margin-top:10px !important; }
+.mt-15{ margin-top:15px !important; }
+.mt-20{ margin-top:20px !important; }
+.mt-25{ margin-top:25px !important; }
+.mt-30{ margin-top:30px !important; }
+.mt-35{ margin-top:35px !important; }
+.mt-40{ margin-top:40px !important; }
+.mt-45{ margin-top:45px !important; }
+.mt-50{ margin-top:50px !important; }
+
+//------Margin Bottom------------------------
+.mb-5{ margin-bottom:5px !important; }
+.mb-10{ margin-bottom:10px !important; }
+.mb-15{ margin-bottom:15px !important; }
+.mb-20{ margin-bottom:20px !important; }
+.mb-25{ margin-bottom:25px !important; }
+.mb-30{ margin-bottom:30px !important; }
+.mb-60{ margin-bottom:60px !important; }
+//-----------------------------------------
+ion-header{
+    ion-toolbar{
+        --background:var(--ion-color-secondary);
+        --ion-toolbar-color:#fff;
+        ion-button{
+            --color:var(--ion-color-primary-contrast);
+        }
+        ion-back-button{
+            --color:var(--ion-color-primary-contrast);
+        }
+
+        ion-menu-button{
+            --color:var(--ion-color-primary-contrast);
+        }
+
+    }
+}
+//-------------------------------
+
+
+.zoom-btn{
+    zoom:1.7;
+}
+.logo{
+    max-width: 65px;
+}
+
+.star-ratings{
+    ion-icon{
+        color: var(--ion-color-primary);
+        font-size: 20px;
+    }
+   
+}
+//----------------------------
+
+.skip-btn{
+    --background:var(--ion-color-primary);
+    --color:var(--ion-color-primary-contrast);
+    text-transform: uppercase;
+ }
+ .center-align-box{
+    p{ font-size:13px; }
+}
+
+//---------------------------------
+
+//---------------------------------
+
+// ion-header{
+//     ion-col:first-child{
+//         background: var(--ion-color-primary);
+//     }
+
+
+//     ion-toolbar{
+//         --border-width: 0;
+//         ion-item{
+//             --inner-border-width: 0;
+//             --background: transparent;
+//             color:#fff;
+//             width:100%;
+//             font-size: 15px;
+//         }
+//     }
+// }
+
+//---------------------------------
+app-tab-nearme {
+    background:#fbf7f6;
+    background-image: url(/assets/images/header_bg.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: -25vh;
+}
+app-product-list {
+    background:#fbf7f6;
+    background-image: url(/assets/images/header_bg_02.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: -30vh;
+}

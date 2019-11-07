@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-menu-button ></ion-menu-button>
+      </ion-buttons>
+      <ion-title >Previous Orders</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+          <ion-row>
+            <ion-col size="8" text-left>
+              Order Date
+              <p>05-March-2017 02:35 am</p>
+            </ion-col>
+             <ion-col text-right>
+              Order No
+              <p>54654654</p>
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+        <ion-card-content padding>
+          <ion-row>
+            <ion-col text-left>Panding</ion-col>
+            <ion-col text-center>Paid/Unpaid</ion-col>
+            <ion-col text-right>Delivered</ion-col>
+          </ion-row>
+          <div class="cartStatus">
+              <span class="first completed"><i class="ion-checkmark"></i> <label>1</label></span>
+              <span class="second completed"><i class="ion-checkmark"></i> <label>2</label></span>
+              <span class="third"><i class="ion-checkmark"></i> <label>3</label></span>
+          </div>
+        </ion-card-content>
+         <ion-row class="card-footer">
+            <ion-col text-left>
+              Order Total
+            </ion-col>
+             <ion-col text-right>
+              $75.00
+            </ion-col>
+          </ion-row>
+      </ion-card>
+</ion-content>

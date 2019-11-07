@@ -1,0 +1,12 @@
+{"status":true,"data":[
+    {"id":"1","rec_title":"Breakfast", "rec_items_total":"345 Items","rec_offer":"40% of | Use Coupon EATME","rec_img":"https://hybridtemplates.com/demos/food-point/images/category_01.png","sub_cat":[{"id":"11","rec_title":"Juice","rec_icon":"glass-martini-alt"},{"id":"12","rec_title":"Coffee","rec_icon":"coffee"},{"id":"13","rec_title":"Egg","rec_icon":"egg"},{"id":"14","rec_title":"Sallet","rec_icon":"carrot"},{"id":"15","rec_title":"Fruits","rec_icon":"apple-alt"}]},
+
+    {"id":"2","rec_title":"Lunch", "rec_items_total":"345 Items","rec_offer":"40% of | Use Coupon EATME","rec_img":"https://hybridtemplates.com/demos/food-point/images/category_02.png","sub_cat":[{"id":"16","rec_title":"Non Vegetarian","rec_icon":"drumstick-bite"},{"id":"17","rec_title":"Fish","rec_icon":"fish"}]},
+
+    {"id":"3","rec_title":"Dinner", "rec_items_total":"345 Items","rec_offer":"40% of | Use Coupon EATME","rec_img":"https://hybridtemplates.com/demos/food-point/images/category_03.png","sub_cat":[{"id":"16","rec_title":"Non Vegetarian","rec_icon":"drumstick-bite"},{"id":"17","rec_title":"Fish","rec_icon":"fish"}]},
+
+    {"id":"4","rec_title":"Fast Food", "rec_items_total":"345 Items","rec_offer":"40% of | Use Coupon EATME","rec_img":"https://hybridtemplates.com/demos/food-point/images/category_04.png","sub_cat":[{"id":"18","rec_title":"Burger","rec_icon":"hamburger"},{"id":"19","rec_title":"Pizza","rec_icon":"pizza-slice"},{"id":"20","rec_title":"Bread","rec_icon":"bread-slice"},{"id":"21","rec_title":"Coffee","rec_icon":"coffee"},{"id":"22","rec_title":"Chinese","rec_icon":"utensils"}]},
+
+    {"id":"5","rec_title":"Dessert", "rec_items_total":"345 Items","rec_offer":"40% of | Use Coupon EATME","rec_img":"https://hybridtemplates.com/demos/food-point/images/category_05.png","sub_cat":[{"id":"23","rec_title":"Ice Creem","rec_icon":"ice-cream"},{"id":"24","rec_title":"Cake","rec_icon":"birthday-cake"}]}
+
+]}

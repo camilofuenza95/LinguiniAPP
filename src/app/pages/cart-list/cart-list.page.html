@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" >
+            <ion-back-button text="" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+        <ion-title >My Cart</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+        <div padding *ngIf="cartData==''">
+                <h2 text-center>Cart is empty</h2>
+            </div>
+
+            <ion-card *ngFor="let orden of ordenes">
+              <ion-card-content>
+                <ion-row wrap>
+                    <ion-col size="4">
+                        <img style="margin-left: 30%; width:46px; height:140px;" src="data:image/png;base64,{{orden.imagenCarta}}" >
+                    </ion-col>
+                    <ion-col >
+                          <h2>{{orden.nombreCarta}}</h2>
+                          <!--<p>{{cObj.display.attr_title}}</p>-->
+                          <ion-row class="price">
+                          <!---  <ion-col text-left ><span>{{cObj.display.price | formattedPrice}}</span></ion-col>
+                            <ion-col text-left>{{cObj.display.sale_price | formattedPrice}}</ion-col>
+                            <ion-col text-left>{{cObj.total | formattedPrice}}</ion-col>-->
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+                
+                <ion-row wrap>
+                    <ion-col size="9" >
+                       <!-- <div class="cart-btn-h" *ngIf="orden.nombreEstado==='Pedido en lista'">
+                                <ion-fab-button size="small" (click)="LessOneItem(cObj,cObj.display.indx);" > <ion-icon name="remove"></ion-icon> </ion-fab-button>
+                                <ion-input type="number" [(ngModel)]="cObj.display.qty"></ion-input>
+                                <ion-fab-button size="small" (click)="addToCart(cObj,cObj.display.indx);" > <ion-icon name="add"></ion-icon> </ion-fab-button>
+                        </div>-->
+                    </ion-col>
+                   <ion-col *ngIf="orden.nombreEstado==='Pedido en lista'" >
+                            <ion-fab-button  size="small" (click)="cancelarOrden(orden)" > <ion-icon name="trash"></ion-icon> </ion-fab-button>
+                    </ion-col>
+                </ion-row>
+            
+              </ion-card-content>
+            </ion-card>
+            
+
+      
+</ion-content>
+<ion-footer *ngIf="cartService.cartItemsTotal>0">
+    <ion-toolbar>
+            <ion-row>
+                <ion-col>
+                    <h3>TOTAL : {{cartService.cartTotalAmount | formattedPrice}}</h3>
+                    <h3>ITEMS : {{cartService.cartItemsTotal}}</h3>
+                </ion-col>
+                <ion-col >
+                        <ion-button (click)="moveNext()" expand="full" >Checkout</ion-button>
+                </ion-col>
+            </ion-row>
+    </ion-toolbar>
+</ion-footer>

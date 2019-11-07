@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start" >
+          <ion-back-button text="" icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+      <ion-title >Address Form</ion-title>
+
+      <ion-buttons slot="end">
+        <ion-button fill="clear"  expend="block" (click)="close()" >
+          <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+        <form [formGroup]="formData" (ngSubmit)="formSubmit()" >
+
+                <ion-list class="form">
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >House Number</ion-label>
+                       <ion-input type="text" formControlName="houseNumber"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >Street Address</ion-label>
+                       <ion-input type="text" formControlName="streetName"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >City</ion-label>
+                       <ion-input type="text" formControlName="city"></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >State</ion-label>
+                       <ion-input type="text"formControlName="state" ></ion-input>
+                     </ion-item>
+             
+                     <ion-item>
+                       <ion-label position="floating" color="medium" >Mobile Number</ion-label>
+                       <ion-input type="number" formControlName="mobileNumber"></ion-input>
+                     </ion-item>
+             
+                 </ion-list>
+                 <div text-center>
+                    <ion-button expand="block" type="submit"  [disabled]="!formData.valid">{{addressData.id>0 ? 'UPDATE' : 'SAVE'}}</ion-button>
+                 </div>
+               </form>
+</ion-content>
