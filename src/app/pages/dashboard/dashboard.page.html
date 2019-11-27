@@ -1,0 +1,33 @@
+<ion-tabs>
+    <div *ngIf="isVisibaleCart" class="cart-circle">
+        <ion-fab-button  routerLink="/cart-list" >
+          <ion-icon name="cart"></ion-icon>
+       </ion-fab-button>
+       <ion-badge color="light" id="cart-badge">{{cartService.cartItemsTotal}}</ion-badge>
+    </div>
+    <!-- <div class="half-circle"></div> -->
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="nearme">
+      <fa-icon [icon]="['fas', 'map-marked-alt']" size="2x"></fa-icon>
+      <ion-label>Carta</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button  tab="explore">
+      <fa-icon [icon]="['fas', 'search']" size="2x"></fa-icon>
+      <ion-label>Buscar</ion-label>
+    </ion-tab-button>
+    <ion-tab-button  >
+      </ion-tab-button>
+
+    <ion-tab-button  tab="offers">
+      <fa-icon [icon]="['fas', 'gifts']" size="2x"></fa-icon>
+      <ion-label>Pedido</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="account">
+      <fa-icon [icon]="['fas', 'user-circle']" size="2x"></fa-icon>
+      <ion-label>Pagar Cuenta</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>

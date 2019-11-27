@@ -1,0 +1,117 @@
+<ion-header style="background-image: url(./assets/images/sodaheader2.jpg); width:100%; border-bottom-left-radius:50px; border-bottom-right-radius:50px; width:100% !important" >
+    
+  <ion-toolbar >
+      <ion-buttons slot="start">
+        <ion-button routerLink="/menu/dashboard">
+        <ion-icon slot="icon-only" text="" name="arrow-back" icon="arrow-back"></ion-icon>
+          
+        </ion-button>
+          
+      </ion-buttons>
+      
+      <ion-buttons slot="end">
+      <ion-button   routerLink="/search">
+          <ion-icon slot="icon-only" name="ios-search"  ></ion-icon>
+      </ion-button>
+      <ion-button   routerLink="/notifications">
+          <ion-icon  slot="icon-only" name="notifications"></ion-icon>
+      </ion-button>
+  </ion-buttons>
+  <!--<img style="text-align: center;" src="./assets/images/sodascategoria.png">-->
+  </ion-toolbar>
+  
+  <h1>Bebidas</h1>
+</ion-header>
+<div class="header-custom-btn-box" style="position:static">
+  <div class="cat-btn-container">
+         <!-- <ion-fab >
+              <ion-fab-button  [class.active]="selectedCatId==obj.id" color="light" (click)="showProductByCatId(obj.id)" class="cat-btn" *ngFor="let obj of subCategroyData" >
+                <fa-icon icon="{{obj.rec_icon}}"  size="2x"></fa-icon>
+              </ion-fab-button>-->
+              <ion-icon icon="beer" slot="start"></ion-icon>
+              <ion-icon icon="wine"></ion-icon>
+              <ion-icon icon="beer"></ion-icon>
+          <!--</ion-fab>-->
+  </div>
+</div>
+
+<ion-content>
+    <div class="noResult" *ngIf="!_hasRecords">No Product Found</div>
+  
+    <div  *ngFor="let carta of cartas"  class="custom-item" >
+      <ion-card>
+          <ion-card-content >
+            <ion-item lines="none">
+                <h2 slot="start">{{carta.nombreCarta}}</h2>
+                  <ion-chip slot="end" class="price-chip" >
+                       <ion-label>${{carta.valorCarta}}</ion-label>
+                  </ion-chip>
+            </ion-item>
+  
+              <ion-row>
+                  <ion-col size="6">
+                        <img style="margin-left: 30%; width:46px; height:140px;" src="{{carta.imagenCarta}}" ><!--Si Se guardan imagenes de forma local agregar: data:image/png;base64,-->
+                  </ion-col>
+                  <ion-col class="text-right" size="6">
+                      <ion-chip class="stripe-price-chip" >
+                          <ion-label>$1200</ion-label>
+                      </ion-chip>
+                      <div class="btn-box" style="margin-right: -10px;">
+                        <!--*ngIf="_obj.display.qty<1"-->
+                         <ion-button  shape="round"   (click)="registrarOrden(carta)" >Agregar al Pedido</ion-button>      
+                          <!--<div class="cart-btn-v" *ngIf="_obj.display.qty>0">
+                                  <ion-fab-button size="small" (click)="LessOneItem(_obj,_obj.display.indx);" > <ion-icon name="remove"></ion-icon> </ion-fab-button>
+                                
+                                  <ion-fab-button size="small" (click)="addToCart(_obj,_obj.display.indx);" > <ion-icon name="add"></ion-icon> </ion-fab-button>
+                          </div>-->
+                      </div>    
+                  </ion-col>
+              </ion-row>
+          </ion-card-content>
+      </ion-card>
+  
+      <div class="addon_layer">
+         <!-- <h5>{{_addon_title}}</h5>-->
+          <!--<p class="grey-text ion-text-nowrap">{{carta.nombreCarta}}</p>-->
+          <div class="offer_container ion-text-nowrap">
+                 <!-- <p class="offer_1 ion-text-nowrap">{{_obj.addon_rating}} <span>({{_obj.addon_reviews}})</span></p>-->
+                 <!-- <p class="offer_2 ion-text-nowrap">{{_obj.addon_discount}}</p>-->
+          </div>
+      </div>
+  </div>
+  
+  
+  <div *ngIf="_isSkeleton" class="custom-item" >
+      <ion-card>
+          <ion-card-content>
+            <ion-item lines="none">
+                <h2 slot="start"><ion-skeleton-text animated style="width: 165px;"></ion-skeleton-text></h2>
+                <ion-skeleton-text slot="end" animated style="border-radius:20px;max-width:90px; padding:13px;"></ion-skeleton-text>
+            </ion-item>
+  
+              <ion-row>
+                  <ion-col>
+                      <ion-skeleton-text  animated style="width: 100%; height: 150px; "></ion-skeleton-text>
+                  </ion-col>
+                  <ion-col>
+                  <div class="mt-25">
+                      <ion-skeleton-text animated style="width: 90%; padding: 20px; border-radius: 25px;"></ion-skeleton-text>
+                  </div>    
+                  </ion-col>
+              </ion-row>
+          </ion-card-content>
+      </ion-card>
+  
+      <div class="addon_layer">
+          <h5><ion-skeleton-text animated style="width: 100%;"></ion-skeleton-text></h5>
+          <p class="grey-text"><ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text></p>
+          <div class="offer_container">
+              <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text> 
+              <ion-skeleton-text animated style="width:20px;margin-right:5px;display:inline-block;"></ion-skeleton-text>
+              <ion-skeleton-text animated style="width:100px;display:inline-block;"></ion-skeleton-text>
+          </div>
+      </div>
+  </div>
+
+
+</ion-content>

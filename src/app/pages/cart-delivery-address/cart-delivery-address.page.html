@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start" >
+            <ion-back-button text="" icon="arrow-back"></ion-back-button>
+        </ion-buttons>
+        <ion-title >Delivery Address</ion-title>
+        <ion-button fill="outline" slot="end" size="small"  expend="block" (click)="addAddress()" >
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+       </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+<ion-card *ngFor="let obj of addressData">
+        <ion-card-content>
+                <div padding>
+                        {{obj.houseNumber}}, {{obj.streetName}} {{obj.state}} {{obj.city}} {{obj.mobileNumber}}
+                </div>
+                
+                <ion-row wrap>
+                    <ion-col size="6" >
+                        <ion-row>
+                                <ion-col>
+                                        <ion-fab-button size="small"  (click)="editAddress(obj);" > <ion-icon name="md-create"></ion-icon> </ion-fab-button>
+                                </ion-col>
+                                <ion-col >
+                                        <ion-fab-button size="small" (click)="removeAddress(obj);" > <ion-icon name="trash"></ion-icon> </ion-fab-button>
+                                </ion-col>
+                            </ion-row>
+                    </ion-col>
+                    <ion-col text-right>
+                        <ion-radio value="{{obj.id}}" checked="{{cartData.deliveryAddress.id==obj.id ? ture : false}}" (ionSelect)="setDeliveryAddress(obj);" ></ion-radio>
+                    </ion-col>
+                </ion-row>
+
+     </ion-card-content>
+</ion-card>
+
+
+</ion-content>
+<ion-footer *ngIf="cartService.cartItemsTotal>0">
+  <ion-toolbar>
+          <ion-row>
+              <ion-col>
+                  <h3>TOTAL : {{cartService.cartTotalAmount | formattedPrice}}</h3>
+                  <h3>ITEMS : {{cartService.cartItemsTotal}}</h3>
+              </ion-col>
+              <ion-col >
+                      <ion-button (click)="moveNext()" expand="full" >Continue</ion-button>
+              </ion-col>
+          </ion-row>
+  </ion-toolbar>
+</ion-footer>

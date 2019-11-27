@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+             <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+       
+        <ion-buttons slot="end">
+            <ion-button   routerLink="/search">
+                <ion-icon slot="icon-only" name="ios-search"  ></ion-icon>
+            </ion-button>
+            <ion-button   routerLink="/notifications">
+                <ion-icon  slot="icon-only" name="notifications"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+ <app-sliding-banners  *ngIf="!_isSkeleton" [data]="bannerData" ></app-sliding-banners>
+ <app-sliding-banners  [hidden]="!_isSkeleton"  isSkeleton="true" ></app-sliding-banners>
+
+<!--This item goes in link! {{obj.id}}
+    this items go on the start of app-layered-item tab
+*ngFor="let obj of data"
+    [object] = "obj"
+-->
+    <app-layered-item 
+    
+      icon="hand-point-right"
+      link="/menu/dashboard/tabs/nearme/product-list/" 
+      [hidden]="_isSkeleton"
+    ></app-layered-item>
+    <app-layered-item *ngFor="let obj of data"  [hidden]="!_isSkeleton" isSkeleton="true" ></app-layered-item>
+
+</ion-content>

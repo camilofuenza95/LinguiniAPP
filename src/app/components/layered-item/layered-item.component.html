@@ -1,0 +1,91 @@
+<div class="layered-paper" *ngIf="!_isSkeleton" routerLink="/listarPastas">
+        <ion-item lines="none">
+                <ion-avatar> <img src="../assets/images/pastacategoria.png" >
+                        <!--<img src="{{_obj.rec_img}}" />--></ion-avatar>
+                <label>
+                        <h2>Pastas</h2>
+                        <!--<p class="item_numbers">{{_obj.rec_items_total}}</p>-->
+                </label>
+        </ion-item>
+       
+       <!-- <p class="offer">{{_obj.rec_offer}}</p>-->
+        <ion-fab-button class="right-btn" >
+                <fa-icon icon="{{_icon}}" size="2x"></fa-icon>
+        </ion-fab-button>
+       
+</div>
+
+<div class="layered-paper" *ngIf="!_isSkeleton" routerLink="/listarPizzas">
+                
+          <!--      <p class="offer">{{_obj.rec_offer}}</p>-->
+                <ion-fab-button class="right-btn" >
+                        <fa-icon icon="{{_icon}}" size="2x"></fa-icon>
+                </ion-fab-button>
+                <ion-item lines="none">
+                                <ion-avatar> <img src="../assets/images/pizzacategoria.png" >
+                                        <!--<img src="{{_obj.rec_img}}" />--></ion-avatar>
+                                <label>
+                                        <h2>Pizzas</h2>
+                                     <!--   <p class="item_numbers">{{_obj.rec_items_total}}</p>-->
+                                </label>
+                        </ion-item>
+        </div>
+
+        <div class="layered-paper" *ngIf="!_isSkeleton" routerLink="/listarBebidas">
+                
+                     <!--   <p class="offer">{{_obj.rec_offer}}</p>-->
+                        <ion-fab-button class="right-btn" >
+                                <fa-icon icon="{{_icon}}" size="2x"></fa-icon>
+                        </ion-fab-button>
+                        <ion-item lines="none">
+                                        <ion-avatar><img src="../assets/images/sodascategoria.png" >
+                                                <!--<img src="{{_obj.rec_img}}" />--></ion-avatar>
+                                        <label>
+                                                <h2>Bebidas</h2>
+                                           <!--     <p class="item_numbers">{{_obj.rec_items_total}}</p>-->
+                                        </label>
+                                </ion-item>
+                </div>
+                <div class="layered-paper" *ngIf="!_isSkeleton" routerLink="/listarVinos">
+                
+                               <!-- <p class="offer">{{_obj.rec_offer}}</p>-->
+                                <ion-fab-button class="right-btn" >
+                                        <fa-icon icon="{{_icon}}" size="2x"></fa-icon>
+                                </ion-fab-button>
+                                <ion-item lines="none">
+                                                <ion-avatar> <img src="../assets/images/vinoscategoria.png" >
+                                                        <!--<img src="{{_obj.rec_img}}" />--></ion-avatar>
+                                                <label>
+                                                        <h2>Vinos</h2>
+                                                <!--        <p class="item_numbers">{{_obj.rec_items_total}}</p>-->
+                                                </label>
+                                        </ion-item>
+                        </div>
+                        <div class="layered-paper" *ngIf="!_isSkeleton" routerLink="/listarCervezas">
+                
+                                      <!--  <p class="offer">{{_obj.rec_offer}}</p>-->
+                                        <ion-fab-button class="right-btn" >
+                                                <fa-icon icon="{{_icon}}" size="2x"></fa-icon>
+                                        </ion-fab-button>
+                                        <ion-item lines="none">
+                                                        <ion-avatar> <img src="../assets/images/cervezascategoria.png" >
+                                                                <!--<img src="{{_obj.rec_img}}" />--></ion-avatar>
+                                                        <label>
+                                                                <h2>Cervezas</h2>
+                                                    <!--           <p class="item_numbers">{{_obj.rec_items_total}}</p>-->
+                                                        </label>
+                                                </ion-item>
+                                </div>
+
+<div class="layered-paper" *ngIf="_isSkeleton">
+        <ion-item lines="none">
+                <ion-avatar><ion-skeleton-text animated style="width: 85%; margin-top: 5px; height: 85%;"></ion-skeleton-text></ion-avatar>
+                <label>
+                        <h2><ion-skeleton-text animated style="width: 130px;"></ion-skeleton-text></h2>
+                        <p class="item_numbers"><ion-skeleton-text animated style="width: 30px;"></ion-skeleton-text></p>
+                </label>
+                
+        </ion-item>
+        <ion-skeleton-text animated style="width: 60%;margin-left:20px;"></ion-skeleton-text>
+        <ion-skeleton-text animated style="position:absolute; width:50px; height:50px; border-radius:100px; top: 30%; right:-25px;"></ion-skeleton-text>
+</div>
