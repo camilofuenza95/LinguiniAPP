@@ -56,7 +56,9 @@ export class ListarBebidasComponent implements OnInit {
         this.cartas = data;
       })
 
+
       
+
 
        //----------Category------------------
        let cat_id = this.activedRoute.snapshot.paramMap.get('cat_id');
@@ -155,7 +157,9 @@ registrarOrden(carta:Carta) {
 
   const idMesa = localStorage.getItem('idMesa');
  /* this.orden.idMesa = parseInt(idMesa);*/
+
   this.orden.idMesa = 11;
+
   this.orden.idEstado = 5;
   
   this.orden.fechaEmisionOrden = formatDate(this.myDate, 'dd/MM/yyyy', 'en');

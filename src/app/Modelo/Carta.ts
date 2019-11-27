@@ -3,5 +3,7 @@ export class Carta{
     nombreCarta: String;
     valorCarta: number;
     idCategoria: number;
+
     imagenCarta: string;
+
     }

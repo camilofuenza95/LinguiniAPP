@@ -4,6 +4,7 @@ export class Orden {
     idMesa:number;
     fechaEmisionOrden: string;
     idEstado:number;
+
     imagenCarta: string;
     nombreCarta: string;
     nombreEstado: string;
