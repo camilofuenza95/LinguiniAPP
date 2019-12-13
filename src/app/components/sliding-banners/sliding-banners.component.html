@@ -1,15 +1,15 @@
 <ion-slides *ngIf="!_isSkeleton"  loop="true" effect="fade" pager="true" >
       <ion-slide  *ngFor="let obj of _data">
               <div class="slider_layer_1"></div>
-              <div class="slider_layer_2">
-                  <h5>{{obj.addon_title}}</h5>
-                  <p class="grey-text">{{obj.addon_sub_title}}</p>
+              <div style="top:75%" class="slider_layer_2">
+                  <h5 style="font-size: 25px;">{{obj.addon_title}}</h5>
+                  <p style="font-size: 20px;" class="grey-text">{{obj.addon_sub_title}}</p>
                   <div class="offer_container">
-                          <p class="offer_1">{{obj.rating}} <span>({{obj.review}} )</span></p>
-                          <p class="offer_2">{{obj.offer}} </p>
+                          <p style="font-size: 15px;" class="offer_1">{{obj.rating}} <span>({{obj.review}} )</span></p>
+                          <p style="font-size: 15px;" class="offer_2">{{obj.offer}} </p>
                   </div>
               </div>
-            <img  src="{{obj.banner_img}}">
+            <img   src="{{obj.banner_img}}">
     </ion-slide>
 </ion-slides>
 

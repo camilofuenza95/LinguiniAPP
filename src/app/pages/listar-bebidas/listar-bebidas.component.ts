@@ -144,7 +144,7 @@ async presentAlert() {
   const alert = await this.alertController.create({
     header: 'Éxito!',
     subHeader: 'Su pedido se está preparando',
-    message: '¨Puede revisar el estado de sus pedidos dando click al icono de la izquina superior..',
+    message: '¨Puede revisar el estado de sus pedidos dando click al icono del carrito..',
     buttons: ['OK']
   });
 
@@ -156,9 +156,9 @@ registrarOrden(carta:Carta) {
   this.orden.idCarta = carta.idCarta;
 
   const idMesa = localStorage.getItem('idMesa');
- /* this.orden.idMesa = parseInt(idMesa);*/
+ this.orden.idMesa = parseInt(idMesa);
 
-  this.orden.idMesa = 11;
+
 
   this.orden.idEstado = 5;
   

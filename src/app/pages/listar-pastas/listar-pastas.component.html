@@ -42,15 +42,15 @@
       <ion-card>
           <ion-card-content >
             <ion-item lines="none">
-                <h2 slot="start">{{carta.nombreCarta}}</h2>
+                <h2 slot="start"style="font-size: 25px;">{{carta.nombreCarta}}</h2>
                   <ion-chip slot="end" class="price-chip" >
-                       <ion-label>${{carta.valorCarta}}</ion-label>
+                       <ion-label style="font-size: 20px;">${{carta.valorCarta}}</ion-label>
                   </ion-chip>
             </ion-item>
   
               <ion-row>
                   <ion-col size="6">
-                        <img style="margin-left: -5%; width:178px; height:120px;" src="{{carta.imagenCarta}}" ><!--data:image/png;base64, al comienzo de src-->
+                        <img style="margin-left: 10%; width:178px; height:120px;" src="{{carta.imagenCarta}}" ><!--data:image/png;base64, al comienzo de src-->
                   </ion-col>
                   <ion-col class="text-right" size="6">
                       <ion-chip class="stripe-price-chip" >
@@ -58,7 +58,7 @@
                       </ion-chip>
                       <div class="btn-box" style="margin-right: -10px;">
                         <!--*ngIf="_obj.display.qty<1"-->
-                         <ion-button  shape="round"   (click)="registrarOrden(carta)" >Agregar al Pedido</ion-button>      
+                         <ion-button  shape="round" style="font-size: 20px;"  (click)="registrarOrden(carta)" >Agregar al Pedido</ion-button>      
                           <!--<div class="cart-btn-v" *ngIf="_obj.display.qty>0">
                                   <ion-fab-button size="small" (click)="LessOneItem(_obj,_obj.display.indx);" > <ion-icon name="remove"></ion-icon> </ion-fab-button>
                                 

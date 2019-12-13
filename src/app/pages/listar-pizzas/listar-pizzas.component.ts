@@ -39,7 +39,7 @@ export class ListarPizzasComponent implements OnInit {
     _addon_discount:string;
 
     myDate = new Date();
-
+    public isVisibaleCart = true;
   constructor(public alertController: AlertController,private service: APILinguiniServiceService, private router: Router,
     public productService:ProductsService,
     public cartService:CartService,
@@ -47,6 +47,11 @@ export class ListarPizzasComponent implements OnInit {
     private ev:Events) { }
 
   ngOnInit() {
+
+
+
+
+
     this.service.getPizzas()
     .subscribe(data => {
     
@@ -101,6 +106,20 @@ export class ListarPizzasComponent implements OnInit {
          },2000);
    });
  //--------------------------------
+
+//carrito
+
+window.addEventListener('keyboardDidShow', (event) => {
+  // Describe your logic which will be run each time when keyboard is about to be shown.
+  //console.log(event.keyboardHeight);
+  this.isVisibaleCart = false;
+});
+
+window.addEventListener('keyboardDidHide', () => {
+  // Describe your logic which will be run each time keyboard is closed.
+  this.isVisibaleCart = true;
+});
+
   }
   showProductByCatId(cat_id:number){
     this.selectedCatId = cat_id;
@@ -136,7 +155,7 @@ async presentAlert() {
   const alert = await this.alertController.create({
     header: 'Éxito!',
     subHeader: 'Su pedido se está preparando',
-    message: '¨Puede revisar el estado de sus pedidos dando click al icono de la izquina superior..',
+    message: '¨Puede revisar el estado de sus pedidos dando click al icono del carrito..',
     buttons: ['OK']
   });
 
@@ -148,8 +167,8 @@ registrarOrden(carta:Carta) {
   this.orden.idCarta = carta.idCarta;
 
   const idMesa = localStorage.getItem('idMesa');
- /* this.orden.idMesa = parseInt(idMesa);*/
-  this.orden.idMesa = 11;
+ this.orden.idMesa = parseInt(idMesa);
+  /*this.orden.idMesa = 11;*/
   this.orden.idEstado = 5;
   
   this.orden.fechaEmisionOrden = formatDate(this.myDate, 'dd/MM/yyyy', 'en');

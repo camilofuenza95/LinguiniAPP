@@ -6,6 +6,8 @@ import { ListarCervezasComponent } from './pages/listar-cervezas/listar-cervezas
 import { ListarPastasComponent } from './pages/listar-pastas/listar-pastas.component';
 import { ListarPizzasComponent } from './pages/listar-pizzas/listar-pizzas.component';
 import { ListarVinosComponent } from './pages/listar-vinos/listar-vinos.component';
+import {MenuCarritoComponent} from './menu-carrito/menu-carrito.component' ;
+import { pathToFileURL } from 'url';
 
 const routes: Routes = [
   { path: '', redirectTo: 'auth-login', pathMatch: 'full' },
@@ -33,7 +35,8 @@ const routes: Routes = [
   {path: 'listarPastas', component: ListarPastasComponent},
   {path: 'listarPizzas', component: ListarPizzasComponent},
   {path: 'listarVinos', component: ListarVinosComponent},
-  {path: 'overlayItem', component: OverlayItemComponent}
+  {path: 'overlayItem', component: OverlayItemComponent},
+  {path: 'menuCarrito', component: MenuCarritoComponent}
   
 
 ];

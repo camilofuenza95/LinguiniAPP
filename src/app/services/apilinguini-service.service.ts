@@ -5,6 +5,9 @@ import {Mesa} from '../Modelo/Mesa';
 import {Carta} from '../Modelo/Carta';
 import {Orden} from '../Modelo/Orden';
 import { Categoria } from '../Modelo/Categoria';
+import { OrdenJoincomprobante } from '../Modelo/OrdenJoinComprobante';
+import { Comprobantes } from '../Modelo/Comprobantes';
+import { TipoPago } from '../Modelo/TipoPago';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +19,9 @@ export class APILinguiniServiceService {
   Url = 'http://localhost:8034/api';
 
   private httpHeader = new HttpHeaders({'Content-Type': 'application/json'});
+mostrarComprobante(idMesa:number){
+  return this.http.get<OrdenJoincomprobante[]>(this.Url + '/orden/mostrarComprobante/' + idMesa);
+}
 
   cancelarOrden(idOrden:number){
     return this.http.delete<Orden>(this.Url + '/orden/' + idOrden);
@@ -32,6 +38,24 @@ export class APILinguiniServiceService {
     return this.http.get<Empleado[]>(this.Url + '/empleado/meserosAPP');
   }
 
+  agregarComprobante(comprobantes:Comprobantes ){
+    return this.http.post<Comprobantes>(this.Url + '/comprobante/' + comprobantes.totalComprobante + '/' + comprobantes.idTipoPago+ '/' + comprobantes.idMesa +'/agregarComprobante', comprobantes);
+   
+  }
+
+  getTotalAPAgar(idMesa:number){
+    return this.http.get<number>(this.Url + '/orden/' + idMesa + '/totalAPagar');
+  }
+
+  getTipoPago(){
+    return this.http.get<TipoPago[]>(this.Url + '/tipoPago/listarTipoPago');
+  }
+
+  pagarOrden(idMesa: number) {
+    return this.http.put<number>(this.Url + '/orden/pagarOrden/' + idMesa,idMesa);   
+      }
+
+    
  
 
   getMesas() {
@@ -61,7 +85,7 @@ export class APILinguiniServiceService {
       return this.http.get<Carta[]>(this.Url + '/carta/cervezas');
     }
     registrarOrden(orden: Orden){
-      return this.http.post<Orden>(this.Url + '/orden/' + orden.idEstado + '/' + orden.idMesa + '/' + orden.idCarta + '/addorden', orden);
+      return this.http.post<Orden>(this.Url + '/orden/' + orden.idMesa + '/' + orden.idCarta + '/addorden', orden);
     }
     
 }

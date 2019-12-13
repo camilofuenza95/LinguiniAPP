@@ -1,5 +1,7 @@
+
 <ion-header style="background-image: url(./assets/images/pizzaheader.jpg); width:100%; border-bottom-left-radius:50px; border-bottom-right-radius:50px; width:100% !important" >
-    
+ 
+
   <ion-toolbar >
       <ion-buttons slot="start">
         <ion-button routerLink="/menu/dashboard">
@@ -22,7 +24,10 @@
   
   <h1>Pizzas</h1>
 </ion-header>
-<div class="header-custom-btn-box" style="position:static">
+
+
+
+<div class="header-custom-btn-box" >
   <div class="cat-btn-container">
          <!-- <ion-fab >
               <ion-fab-button  [class.active]="selectedCatId==obj.id" color="light" (click)="showProductByCatId(obj.id)" class="cat-btn" *ngFor="let obj of subCategroyData" >
@@ -35,22 +40,31 @@
   </div>
 </div>
 
+
+
+
+
 <ion-content>
+
+   
+
+
+
     <div class="noResult" *ngIf="!_hasRecords">No Product Found</div>
   
     <div  *ngFor="let carta of cartas"  class="custom-item" >
       <ion-card>
           <ion-card-content >
             <ion-item lines="none">
-                <h2 slot="start">{{carta.nombreCarta}}</h2>
+                <h2 slot="start" style="font-size: 25px;">{{carta.nombreCarta}}</h2>
                   <ion-chip slot="end" class="price-chip" >
-                       <ion-label>${{carta.valorCarta}}</ion-label>
+                       <ion-label style="font-size: 20px;" > ${{carta.valorCarta}}</ion-label>
                   </ion-chip>
             </ion-item>
   
               <ion-row>
                   <ion-col size="6">
-                        <img style="margin-left: -5%; width:178px; height:120px;" src="{{carta.imagenCarta}}" >
+                        <img style="margin-left: 10%; width:178px; height:120px;" src="{{carta.imagenCarta}}" >
                   </ion-col>
                   <ion-col class="text-right" size="6">
                       <ion-chip class="stripe-price-chip" >
@@ -58,7 +72,7 @@
                       </ion-chip>
                       <div class="btn-box" style="margin-right: -10px;">
                         <!--*ngIf="_obj.display.qty<1"-->
-                         <ion-button  shape="round"   (click)="registrarOrden(carta)" >Agregar al Pedido</ion-button>      
+                         <ion-button  shape="round" style="font-size: 20px;"   (click)="registrarOrden(carta)" >Agregar al Pedido</ion-button>      
                           <!--<div class="cart-btn-v" *ngIf="_obj.display.qty>0">
                                   <ion-fab-button size="small" (click)="LessOneItem(_obj,_obj.display.indx);" > <ion-icon name="remove"></ion-icon> </ion-fab-button>
                                 
@@ -76,8 +90,8 @@
           <div class="offer_container ion-text-nowrap">
                  <!-- <p class="offer_1 ion-text-nowrap">{{_obj.addon_rating}} <span>({{_obj.addon_reviews}})</span></p>-->
                  <!-- <p class="offer_2 ion-text-nowrap">{{_obj.addon_discount}}</p>-->
-          </div>
-      </div>
+         </div>
+     </div>
   </div>
   
   
@@ -114,4 +128,7 @@
   </div>
 
 
+  
+
 </ion-content>
+<footer><app-menu-carrito></app-menu-carrito></footer>

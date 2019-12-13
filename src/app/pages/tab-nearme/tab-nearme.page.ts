@@ -23,44 +23,28 @@ export class TabNearmePage implements OnInit {
 
     this.bannerData = [
       {
-        banner_img:"https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2018-12-07-at-3-39-25-pm-1544215180.png",
-        addon_title:"Orgenic Vegetable Set",
-        addon_sub_title:"Roma Tomatoes, Red Onions, Kalamata Olives...",
+        banner_img:"https://www.canal108.cl/fondopizza.jpeg",
+        addon_title:"Pizza Tradicional al Linguini",
+        addon_sub_title:"Aceitunas de oliva, Pimientos verdes, Cebolla morada...",
         rating:"4.8",
         review:"545",
-        offer:"45% of | Use Coupon EATME"
+        offer:"45% descuento días Lunes"
       },
       {
-        banner_img:"https://hybridtemplates.com/demos/food-point/images/banner_01.png",
-        addon_title:"Orgenic Vegetable Set",
-        addon_sub_title:"Roma Tomatoes, Red Onions, Kalamata Olives...",
-        rating:"3.2",
+        banner_img:"https://www.canal108.cl/fondopasta.jpeg",
+        addon_title:"Tortiglioni a la Bolognesa",
+        addon_sub_title:"Albahaca fresa, salsa de tomates casera, pasta de la casa...",
+        rating:"4.2",
         review:"559",
-        offer:"40% of | Use Coupon EATME"
+        offer:"20% descuento días Jueves"
       },
       {
-        banner_img:"https://hybridtemplates.com/demos/food-point/images/banner_03.png",
-        addon_title:"Orgenic Vegetable Set",
-        addon_sub_title:"Roma Tomatoes, Red Onions, Kalamata Olives...",
+        banner_img:"https://www.canal108.cl/fondovinos.jpeg",
+        addon_title:"Vino de la Casa",
+        addon_sub_title:"Uvas selectas, guardado en roble durante 5 años...",
         rating:"5.0",
         review:"854",
-        offer:"30% of | Use Coupon EATME"
-      },
-      {
-        banner_img:"https://hybridtemplates.com/demos/food-point/images/banner_04.png",
-        addon_title:"Orgenic Vegetable Set",
-        addon_sub_title:"Roma Tomatoes, Red Onions, Kalamata Olives...",
-        rating:"4.8",
-        review:"987",
-        offer:"50% of | Use Coupon EATME"
-      },
-      {
-        banner_img:"https://hybridtemplates.com/demos/food-point/images/banner_05.png",
-        addon_title:"Orgenic Vegetable Set",
-        addon_sub_title:"Roma Tomatoes, Red Onions, Kalamata Olives...",
-        rating:"4.9",
-        review:"999",
-        offer:"35% of | Use Coupon EATME"
+        offer:"2x1 días Viernes"
       }
     ];
 

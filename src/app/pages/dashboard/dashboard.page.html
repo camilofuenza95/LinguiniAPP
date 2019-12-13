@@ -6,27 +6,27 @@
        <ion-badge color="light" id="cart-badge">{{cartService.cartItemsTotal}}</ion-badge>
     </div>
     <!-- <div class="half-circle"></div> -->
-  <ion-tab-bar slot="bottom">
+  <ion-tab-bar style="height: 77px;" slot="bottom">
     <ion-tab-button tab="nearme">
-      <fa-icon [icon]="['fas', 'map-marked-alt']" size="2x"></fa-icon>
-      <ion-label>Carta</ion-label>
+      <fa-icon [icon]="['fas', 'map-marked-alt']" size="3x"></fa-icon>
+      <ion-label style="font-size: 15px;">Carta</ion-label>
     </ion-tab-button>
 
     <ion-tab-button  tab="explore">
-      <fa-icon [icon]="['fas', 'search']" size="2x"></fa-icon>
-      <ion-label>Buscar</ion-label>
+      <fa-icon [icon]="['fas', 'search']" size="3x"></fa-icon>
+      <ion-label style="font-size: 15px;">FAQ</ion-label>
     </ion-tab-button>
     <ion-tab-button  >
       </ion-tab-button>
 
     <ion-tab-button  tab="offers">
-      <fa-icon [icon]="['fas', 'gifts']" size="2x"></fa-icon>
-      <ion-label>Pedido</ion-label>
+      <fa-icon [icon]="['fas', 'gifts']" size="3x"></fa-icon>
+      <ion-label style="font-size: 15px;">Pedido</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="account">
-      <fa-icon [icon]="['fas', 'user-circle']" size="2x"></fa-icon>
-      <ion-label>Pagar Cuenta</ion-label>
+    <ion-tab-button routerLink="/cart-list">
+      <fa-icon [icon]="['fas', 'user-circle']" size="3x"></fa-icon>
+      <ion-label style="font-size: 15px;">Pagar Cuenta</ion-label>
     </ion-tab-button>
 
   </ion-tab-bar>

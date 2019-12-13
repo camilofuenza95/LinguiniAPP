@@ -4,6 +4,8 @@ ion-header{
     }
 }
 
+
+
 ion-content{
     .shadow-img{
         background: url('/assets/images/login-shadow.jpg');
@@ -32,4 +34,8 @@ ion-content{
 
 ion-footer{
     margin-bottom: -4px;
+}
+
+.alert-radio-label{
+    font-size: 5rem;
 }

@@ -2,6 +2,11 @@ import { CommonService } from './../../services/common.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from './../../services/cart.service';
+import { APILinguiniServiceService } from 'src/app/services/apilinguini-service.service';
+import { OrdenJoincomprobante } from 'src/app/Modelo/OrdenJoinComprobante';
+import { Comprobantes } from 'src/app/Modelo/Comprobantes';
+import { TipoPago } from 'src/app/Modelo/TipoPago';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-cart-payment',
@@ -9,26 +14,54 @@ import { CartService } from './../../services/cart.service';
   styleUrls: ['./cart-payment.page.scss'],
 })
 export class CartPaymentPage implements OnInit {
+ordenJoinComprobantes: OrdenJoincomprobante[];
+
+
 
   public cartData:any;
   public paymentOptions:any;
+  comprobantes:Comprobantes={idComprobante:0,fechaEmisionComprobante:'',totalComprobante:0,idTipoPago:0, idMesa:0};
+  tiposPago: TipoPago[];
+  total:number;
+  
   constructor(
     public cartService:CartService,
     public router:Router,
-    public commonService:CommonService
-    ) { 
+    public commonService:CommonService,
+    private service: APILinguiniServiceService,
+    public alertController: AlertController) { 
 
       this.cartData = this.cartService.getCart();
         console.log(this.cartData);
 
-        this.paymentOptions = [
-           {id:2,type:"PayPal",code:'PAYPAL'},
-           {id:3,type:"Strip",code:'STRIP'},
-      ];
 
     }
 
+    
+    
   ngOnInit() {
+    
+    
+    const idMesa = localStorage.getItem('idMesa');
+
+    this.service.getTotalAPAgar(parseInt(idMesa))
+    .subscribe(data => {
+    
+      this.total= data;
+    })
+
+    this.service.mostrarComprobante(parseInt(idMesa))
+    .subscribe(data => {
+    
+      this.ordenJoinComprobantes= data;
+    })
+
+    this.service.getTipoPago()
+    .subscribe(data2 => {
+    
+      this.tiposPago= data2;
+    })
+
   }
   
   setPaymentMethod(obj){
@@ -42,5 +75,47 @@ export class CartPaymentPage implements OnInit {
         this.router.navigateByUrl('/cart-order-status');
     }
         
+  }
+  idTipoPago:number;
+  idMesa:number;
+  radioButtonSelected(tp:TipoPago){
+    
+    this.comprobantes.idTipoPago=tp.idTipoPago;
+   
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Éxito!',
+      subHeader: 'Cuenta Pagada',
+      message: '¨Muchas gracias por su visita, devuelva el tablet al garzón',
+      buttons: ['OK']
+    });
+  
+    await alert.present();
+  }
+
+  pagarCuenta(){
+  
+   
+    const idMesa = localStorage.getItem('idMesa');
+    this.comprobantes.idMesa = parseInt(idMesa);
+
+    this.comprobantes.totalComprobante=this.total;
+    
+    this.service.agregarComprobante(this.comprobantes).subscribe(
+      data=>{
+
+        this.service.pagarOrden(parseInt(idMesa))
+
+        .subscribe(data=>{
+          this.router.navigate(['./auth-login']);
+          this.presentAlert();
+        })
+      }
+    );
+   
+
+
   }
 }

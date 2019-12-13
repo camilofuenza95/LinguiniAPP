@@ -45,11 +45,12 @@ export class AuthLoginPage implements OnInit {
 
   registrarMesa() {
 
-    this.service.buscarMesa(this.selectedMesa).subscribe(data => {
+    this.service.buscarMesa(this.selectedMesa)
+    .subscribe(data => {
     this.mesaEncontrada = data;
 
     });
-    this.mesaEncontrada.idEstado = 6;
+    this.mesaEncontrada.idEstado = 3;
     this.mesaEncontrada.idEmpleado = this.selectedEmpleado;
     this.mesaEncontrada.idMesa = this.selectedMesa;
     this.mesaEncontrada.cantidadPersonas = this.mesaEncontrada.cantidadPersonas;
@@ -57,7 +58,7 @@ export class AuthLoginPage implements OnInit {
     this.service.modificarMesa(this.mesaEncontrada)
     .subscribe(data => {
       this.mesaEncontrada = data;
-      this.router.navigate(['./menu']);
+      this.router.navigate(['./menu/dashboard']);
       this.presentAlert();
 
     });

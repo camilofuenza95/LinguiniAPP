@@ -3,20 +3,38 @@
         <ion-buttons slot="start" >
             <ion-menu-button class="menu-btn"></ion-menu-button>
         </ion-buttons>
-        <ion-title >Explore</ion-title>
+        <ion-title >FAQ</ion-title>
     </ion-toolbar>
-    <ion-searchbar></ion-searchbar>
+    <!--<ion-searchbar></ion-searchbar>-->
 </ion-header>
 
 <ion-content>
 
-    <ion-card *ngFor="let obj of data">
-        <ion-card-header>
-            <img src="{{obj.img}}">
+    <ion-card >
+        <ion-card-header style="font-weight: bold;">
+                <strong><h3>Garzón</h3></strong>
+                        
         </ion-card-header>
 
         <ion-card-content>
-                {{obj.desc}}
+               <b style="font-size: 25px;"> ¿Como puedo registrar una mesa?</b><br><br>
+               <p style="text-align: justify; font-size: 20px;"> Al dar click en la opción de garzón de la pantalla de inicio, se desplegará una lista con todos los garzones. Debes elegir tu nombre y a continuación dar click en la opción de mesas. Se desplegarán las mesas disponibles, debes elegir la mesa que cuente con la cantidad de personas que a las que atenderás.
+                Una vez seleccionado tu nombre y una mesa, debes dar click en Registrar Mesa y entregar el dispositivo al cliente.
+            </p>
         </ion-card-content>
     </ion-card>
+    <ion-card >
+            <ion-card-header>
+                   
+                   
+                    <strong><h3>Cliente</h3></strong>
+                   
+            </ion-card-header>
+    
+            <ion-card-content>
+                    <b style="font-size: 25px;"> ¿Cómo puedo hacer un pedido?</b><br><br>
+                    <p style="text-align: justify; font-size: 20px;">  Debes elegir una categoria de platos o bebestibles, luego se desplegará una lista con las opciones disponibles y se debe dar click en Agregar Pedido.
+                    </p>
+            </ion-card-content>
+        </ion-card>
 </ion-content>

@@ -3,23 +3,36 @@
         <ion-buttons slot="start" >
             <ion-back-button text="" icon="arrow-back"></ion-back-button>
         </ion-buttons>
-        <ion-title >My Cart</ion-title>
+        <ion-title style="font-size:25px" >Mis Pedidos</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content>
-        <div padding *ngIf="cartData==''">
-                <h2 text-center>Cart is empty</h2>
-            </div>
+      
 
             <ion-card *ngFor="let orden of ordenes">
               <ion-card-content>
                 <ion-row wrap>
-                    <ion-col size="4">
-                        <img style="margin-left: 30%; width:46px; height:140px;" src="{{orden.imagenCarta}}" >
+                    <ion-col  size="4">
+                            <img *ngIf="orden.nombreCarta == 'Ravioli con salsa bolognesa' || orden.nombreCarta == 'Ravioli con salsa alfredo' || orden.nombreCarta == 'Lasagna bolognesa' || orden.nombreCarta == 'Lasagna alfredo'|| 
+                            orden.nombreCarta == 'Fetuccini con salsa bolognesa' || orden.nombreCarta == 'Fetuccini con salsa alfredo'"style="margin-left: 30%; width:155px; height:140px;" src="{{orden.imagenCarta}}" >
+    
+
+                        <img *ngIf="orden.nombreCarta == 'Pizza Peperonni S' || orden.nombreCarta == 'Pizza Peperonni M' || orden.nombreCarta == 'Pizza Peperonni L' || orden.nombreCarta == 'Pizza Jamon Queso S'|| 
+                        orden.nombreCarta == 'Pizza Jamon Queso M' || orden.nombreCarta == 'Pizza Jamon Queso L'"style="margin-left: 30%; width:155px; height:140px;    " src="{{orden.imagenCarta}}" >
+
+                        <img *ngIf="orden.nombreCarta == 'Fanta' || orden.nombreCarta == 'Sprite' || orden.nombreCarta == 'Coca Cola' || orden.nombreCarta == 'Coca Cola Light'|| 
+                        orden.nombreCarta == 'Coca Cola Zero'"style="margin-left: 53%; width:54px; height:140px;" src="{{orden.imagenCarta}}" >
+
+                        <img *ngIf="orden.nombreCarta == 'Vino 350ml' || orden.nombreCarta == 'Vino 750ml'" style="margin-left: 53%; width:48px; height:140px;" src="{{orden.imagenCarta}}" >
+
+                        <img *ngIf="orden.nombreCarta == 'Cerveza 350ml' || orden.nombreCarta == 'Cerveza 750ml'" style="margin-left: 43%; width:92px; height:140px;" src="{{orden.imagenCarta}}" >
+
                     </ion-col>
                     <ion-col >
-                          <h2>{{orden.nombreCarta}}</h2>
+                          <h2 style="font-size: 20px;">{{orden.nombreCarta}}</h2>
+                          <h2 style="font-size: 18px;">{{orden.nombreEstado}}</h2>
+                          <h2>{{orden.idCarta}}</h2>
                           <!--<p>{{cObj.display.attr_title}}</p>-->
                           <ion-row class="price">
                           <!---  <ion-col text-left ><span>{{cObj.display.price | formattedPrice}}</span></ion-col>
@@ -48,15 +61,15 @@
 
       
 </ion-content>
-<ion-footer *ngIf="cartService.cartItemsTotal>0">
+<ion-footer>
     <ion-toolbar>
             <ion-row>
                 <ion-col>
-                    <h3>TOTAL : {{cartService.cartTotalAmount | formattedPrice}}</h3>
-                    <h3>ITEMS : {{cartService.cartItemsTotal}}</h3>
+                    <h3 style="font-size: 25px;">TOTAL : ${{total}}</h3>
+                  
                 </ion-col>
                 <ion-col >
-                        <ion-button (click)="moveNext()" expand="full" >Checkout</ion-button>
+                        <ion-button style="font-size: 30px;" (click)="moveNext()" expand="full" >Pagar Cuenta</ion-button>
                 </ion-col>
             </ion-row>
     </ion-toolbar>

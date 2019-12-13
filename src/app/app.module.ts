@@ -23,6 +23,7 @@ import { ListarCervezasComponent } from './pages/listar-cervezas/listar-cervezas
 import { ListarPizzasComponent } from './pages/listar-pizzas/listar-pizzas.component';
 import { ListarVinosComponent } from './pages/listar-vinos/listar-vinos.component';
 import { ListarPastasComponent } from './pages/listar-pastas/listar-pastas.component';
+import {MenuCarritoComponent} from './menu-carrito/menu-carrito.component';
 
 
 library.add(fab,fas,far);
@@ -34,6 +35,7 @@ library.add(fab,fas,far);
     ListarPastasComponent,
     ListarPizzasComponent,
     ListarVinosComponent,
+    MenuCarritoComponent,
     OverlayItemComponent],
   entryComponents: [],
   imports: [BrowserModule,

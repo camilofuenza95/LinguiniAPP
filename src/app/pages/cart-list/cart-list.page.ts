@@ -16,6 +16,7 @@ export class CartListPage implements OnInit {
   public cartData:any;
   cartas: Carta[];
   ordenes: Orden []; 
+  total:number;
   constructor(
       public cartService:CartService,
       public router:Router,
@@ -28,9 +29,17 @@ export class CartListPage implements OnInit {
 
   ngOnInit() {
     const idMesa = localStorage.getItem('idMesa');
+
     
-    //this.service.getPedidos(parseInt(idMesa))
-    this.service.getPedidos(11)
+
+    this.service.getTotalAPAgar(parseInt(idMesa))
+    .subscribe(data => {
+    
+      this.total= data;
+    })
+    
+    this.service.getPedidos(parseInt(idMesa))
+    /*this.service.getPedidos(11)*/
     .subscribe(data => {
       this.ordenes = data;
     })
@@ -57,7 +66,7 @@ export class CartListPage implements OnInit {
   }
 
   moveNext(){
-      this.router.navigateByUrl('/cart-delivery-address');
+      this.router.navigateByUrl('/cart-payment');
   }
 
   cancelarOrden(orden:Orden){
